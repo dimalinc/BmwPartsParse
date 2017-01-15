@@ -1,11 +1,4 @@
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 
@@ -38,23 +31,23 @@ public class Main {
 
 
 
-        Parser.getCategoriesUrls(url);
+        PartsFromLinkParser.getCategoriesUrls(url);
 
-        for (String categoryUrl: Parser.categoriesUrlsList) {
-            Parser.getUnderCategoriesUrls(categoryUrl);
+        for (String categoryUrl: PartsFromLinkParser.categoriesUrlsList) {
+            PartsFromLinkParser.getUnderCategoriesUrls(categoryUrl);
         }
 
-        Parser.partsWriter = new Csv.Writer(Parser.partsFilePath).delimiter(';');
+        PartsFromLinkParser.partsWriter = new Csv.Writer(PartsFromLinkParser.partsFilePath).delimiter(';');
        // partsWriter2 = new Csv.Writer("c:\Java\0_BMW_parse\\PARTS2.csv").delimiter(';');
 
-        for (String underCategoryUrl:Parser.underCategoriesUrlsList) {
+        for (String underCategoryUrl: PartsFromLinkParser.underCategoriesUrlsList) {
             try {
                 Thread.sleep(5);
             } catch (InterruptedException e) {}
-            Parser.partsParse(underCategoryUrl);
+            PartsFromLinkParser.partsParse(underCategoryUrl);
         }
 
-        Parser.partsWriter.close();
+        PartsFromLinkParser.partsWriter.close();
     }
 
 

@@ -14,7 +14,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 
-public class Parser {
+public class PartsFromLinkParser {
 
     final static String regex = ".tr"/*+"[0-9]{2}"*/;
 
@@ -283,7 +283,7 @@ public class Parser {
 
 
         for (Element link : links) {
-            // TODO доделать проверку-анализатор на наличие двузначного номера подкатегории запчасти
+            // TODO пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             if (link.attr("abs:href").contains("bmwcats.com/bmw/E60/47758/L:N:200410/") && (link.attr("abs:href").length() == 68))
                 underCategoriesUrlsList.add(link.attr("abs:href"));
         }
@@ -331,7 +331,7 @@ public class Parser {
         }
 
         for (Element link : links) {
-            // TODO доделать проверку-анализатор на наличие двузначного номера подкатегории запчасти
+            // TODO пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ-пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             if (link.attr("abs:href").contains(Main.url.substring(0, Main.url.indexOf("vin") - 4)) && (link.attr("abs:href").length() == 60))
                 categoriesUrlsList.add(link.attr("abs:href"));
         }
