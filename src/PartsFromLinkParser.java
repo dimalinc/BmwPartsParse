@@ -18,7 +18,7 @@ public class PartsFromLinkParser {
 
     final static String regex = ".tr"/*+"[0-9]{2}"*/;
 
-    final static String parseDir = "c:\\Java\\1_BMW_parse\\";
+    final static String parseDir = "d:\\Java\\1_BMW_parse\\";
     static ArrayList<String> categoriesUrlsList = new ArrayList<String>();
     static ArrayList<String> underCategoriesUrlsList = new ArrayList<String>();
 
